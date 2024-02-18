@@ -1,5 +1,5 @@
 CONFIG_LOCALVERSION="-perf"
-# CONFIG_LOCALVERSION_AUTO is not set
+CONFIG_LOCALVERSION_AUTO=y
 # CONFIG_USELIB is not set
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
@@ -890,4 +890,14 @@ CONFIG_CRYPTO_MANAGER2=y
 #ifdef VENDOR_EDIT
 #/* Kui.Zhang@PSW.BSP.Kernel.Performance, 2018-11-07, add process reclaim.*/
 CONFIG_PROCESS_RECLAIM=y
+#endif
+
+#ifdef VENDOR_EDIT
+#/* Amktiao add pstore ramoops. */
+CONFIG_PSTORE=y
+CONFIG_PSTORE_RAM=y
+CONFIG_PSTORE_CONSOLE=y
+CONFIG_PSTORE_PMSG=y
+CONFIG_CMDLINE="ramoops_memreserve=4M"
+CONFIG_CMDLINE_EXTEND=y
 #endif
